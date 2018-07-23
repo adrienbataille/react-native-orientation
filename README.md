@@ -1,5 +1,7 @@
 ## React Native Orientation
-[![npm version](https://badge.fury.io/js/react-native-orientation.svg)](https://badge.fury.io/js/react-native-orientation)
+[![npm version](https://badge.fury.io/js/react-native-device-orientation.svg)](https://badge.fury.io/js/react-native-device-orientation)
+
+> Orignal fork from [yamill](https://github.com/yamill/react-native-orientation)
 
 Listen to device orientation changes in React Native applications and programmatically set preferred orientation on a per screen basis. Works on both Android and iOS.
 
