@@ -129,10 +129,15 @@ export default class AppScreen extends Component {
   componentWillMount() {
     // The getOrientation method is async. It happens sometimes that
     // you need the orientation at the moment the JS runtime starts running on device.
-    // `getInitialOrientation` returns directly because its a constant set at the
-    // beginning of the JS runtime.
+    // `getInitialOrientation` or `getInitialSpecificOrientation` returns directly
+    // because its constants set at the beginning of the JS runtime.
 
     const initial = Orientation.getInitialOrientation();
+
+    // Use `getInitialSpecificOrientation` instead of `getInitialOrientation`
+    // to know if its `LANDSCAPE-LEFT` `LANDSCAPE-RIGHT`
+    // const initial = Orientation.getInitialSpecificOrientation();
+
     if (initial === 'PORTRAIT') {
       // do something
     } else {
@@ -221,3 +226,26 @@ removeSpecificOrientationListener((specificOrientation) => {});
 - `unlockAllOrientations()`
 - `getOrientation((err, orientation) => {})`
 - `getSpecificOrientation((err, specificOrientation) => {})`
+
+## Constants
+
+```javascript
+getInitialOrientation;
+```
+
+`orientation` will return one of the following values:
+- `LANDSCAPE`
+- `PORTRAIT`
+- `PORTRAITUPSIDEDOWN`
+- `UNKNOWN`
+
+```javascript
+getInitialSpecificOrientation;
+```
+
+`specificOrientation` will return one of the following values:
+- `LANDSCAPE-LEFT`
+- `LANDSCAPE-RIGHT`
+- `PORTRAIT`
+- `PORTRAITUPSIDEDOWN`
+- `UNKNOWN`
